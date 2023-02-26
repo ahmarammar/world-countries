@@ -4,7 +4,7 @@ const Card = ({countryName, countryFlag, countryPopulation, countryRegion, count
   return (
     <>
       <div className='drop-shadow-md bg-white'>
-          <img src={countryFlag} alt="" className='object-cover' />
+          <img src={countryFlag} alt="" className='object-cover w-full' />
           <div className='pt-8 pb-12 px-8'>
             <h2 className='font-bold text-2xl'>{countryName}</h2>
             <div className='flex flex-col gap-1 mt-6 text-lg tracking-wide text-gray-400'>

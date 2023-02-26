@@ -12,7 +12,7 @@ const App = () => {
       <div className='w-full'>
         <Header />
         <main className='p-8'>
-          <Input />
+          <Input setCountries={setCountries} countries={countries} data={data} />
           <MainView countries={countries}/>
         </main>
       </div>

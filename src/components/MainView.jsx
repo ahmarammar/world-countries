@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from './shared/Card'
 
-const MainView = ({countries}) => {
+const MainView = ({countries,setCountry}) => {
   return (
     <>
-      <section className='py-12 px-4 grid grid-cols-1 gap-14'>
+      <section className='py-16 px-5 grid grid-cols-1 gap-16'>
         {countries.map((country) => {
-          return <Card key={country.numericCode} countryName={country.name} countryFlag={country.flags.svg} countryCapital={country.capital} countryPopulation={country.population} countryRegion={country.region} />
+          return <Card key={country.numericCode} country={country} setCountry={setCountry} />
         })}
       </section>
     </>

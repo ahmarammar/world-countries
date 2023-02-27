@@ -1,22 +1,19 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { Route, Routes } from 'react-router'
+import CountryPage from './components/CountryPage'
 import Header from './components/Header'
-import Input from './components/Input'
-import MainView from './components/MainView'
-import data from "./data/data.json"
-
+import Homepage from './components/Homepage'
 
 const App = () => {
-  const [countries, setCountries] = useState(data);
+  const [country, setCountry] = useState([]);
   return (
-    <>
-      <div className='w-full'>
+    <Routes>
+      <Route path='/' element={<Homepage setCountry={setCountry} />} />
+      <Route path={country.numericCode} element={<>
         <Header />
-        <main className='p-8'>
-          <Input setCountries={setCountries} countries={countries} data={data} />
-          <MainView countries={countries}/>
-        </main>
-      </div>
-    </>
+        <CountryPage country={country} />
+      </>} />
+    </Routes>
   )
 }
 

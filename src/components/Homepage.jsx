@@ -6,7 +6,7 @@ import MainView from './MainView'
 import data from "../data/data.json"
 
 
-const Homepage = ({setCountry}) => {
+const Homepage = () => {
   const [countries, setCountries] = useState(data); 
 
   return (
@@ -15,7 +15,7 @@ const Homepage = ({setCountry}) => {
         <Header />
         <main className='p-8'>
           <Input setCountries={setCountries} countries={countries} data={data} />
-          <MainView countries={countries} setCountry={setCountry}/>
+          <MainView countries={countries}/>
         </main>
       </div>
     </>

@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Card = ({country, setCountry}) => {
-  const handleCard = () => {
-    setCountry(country);
-  }
+const Card = ({country}) => {
   return (
     <>
-      <Link to={`/${country.numericCode}`} onClick={handleCard}>
+      <Link to={`/${country.numericCode}`}>
         <div className='drop-shadow-md bg-white cursor-pointer hover:scale-105 transition-all'>
             <img src={country.flags.svg} alt="" className='object-cover w-full' />
             <div className='pt-8 pb-12 px-8'>

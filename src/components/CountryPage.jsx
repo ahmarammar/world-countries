@@ -22,18 +22,18 @@ const CountryPage = ({data}) => {
             <li><strong>Population:</strong> {country.population}</li>
             <li><strong>Region:</strong> {country.region}</li>
             <li><strong>Sub Region:</strong> {country.subregion}</li>
-            <li><strong>Capital:</strong> {country.capital}</li>
+            {country.capital && <li><strong>Capital:</strong> {country.capital}</li>}
           </ul>
           <ul className="text-gray-700 mt-14 flex flex-col gap-3">
             <li><strong>Top Level Domain:</strong> {country.topLevelDomain}</li>
-            <li><strong>Currencies:</strong> {country.currencies[0].name}</li>
+            {country.currencies && <li><strong>Currencies:</strong> {country.currencies[0].name}</li>}
             <li><strong>Languages:</strong> {country.languages[0].name}</li>
           </ul>
           {country.borders !== undefined && <div className='mt-10'>
             <h2 className='text-xl font-semibold tracking-wide'>Borders Countries:</h2>
             <ul className='flex flex-wrap gap-4 mt-6'>
-              {country.borders.map((b) => {
-                return <li>
+            {country.borders.map((b, idX) => {
+                return <li key={idX}>
                 <Link to={`/${data.find((country) => {
                         return b === country.alpha3Code;
                       }).numericCode}`}>

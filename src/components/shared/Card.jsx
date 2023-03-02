@@ -12,7 +12,7 @@ const Card = ({country}) => {
               <div className='flex flex-col gap-1 mt-6 text-lg tracking-wide text-gray-400'>
                 <p className='text-gray-900'><strong>Population: </strong>{country.population}</p>
                 <p className='text-gray-900'><strong>Region: </strong> {country.region}</p>
-                <p className='text-gray-900'><strong>Capital: </strong>{country.capital}</p>
+                {country.capital && <p className='text-gray-900'><strong>Capital: </strong>{country.capital}</p>}
               </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ const Homepage = () => {
     <>
       <div className='w-full'>
         <Header />
-        <main className='p-8'>
+        <main className='p-8 lg:p-12'>
           <Input setCountries={setCountries} countries={countries} data={data} />
           <MainView countries={countries}/>
         </main>

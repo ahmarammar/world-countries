@@ -14,7 +14,7 @@ const CountryPage = ({data}) => {
             <span className='text-lg'>Back</span>
           </button>
         </Link>
-        <img src={country.flags.svg} alt="" className='rounded-lg' />
+        <img src={country.flags.svg} alt="" className='rounded-lg object-cover' />
         <div>
           <h2 className="text-3xl font-bold tarcking-wide mt-14">{country.name}</h2>
           <ul className="text-gray-700 mt-8 flex flex-col gap-3">

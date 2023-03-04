@@ -5,8 +5,8 @@ const Card = ({country}) => {
   return (
     <>
       <Link to={`/${country.numericCode}`}>
-        <div className='drop-shadow-md bg-white cursor-pointer hover:scale-105 transition-all'>
-            <img src={country.flags.svg} alt="" className='object-cover w-full' />
+        <div className='drop-shadow-md bg-white cursor-pointer hover:scale-105 transition-all h-[28rem]'>
+            <img src={country.flags.svg} alt="" className='object-cover h-48 w-full' />
             <div className='pt-8 pb-12 px-8'>
               <h2 className='font-bold text-2xl'>{country.name}</h2>
               <div className='flex flex-col gap-1 mt-6 text-lg tracking-wide text-gray-400'>

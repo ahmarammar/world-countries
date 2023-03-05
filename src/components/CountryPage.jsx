@@ -9,46 +9,50 @@ const CountryPage = ({data}) => {
     return (
       <div className='p-8'>
         <Link to={"/"}>
-          <button className='flex items-center gap-3 shadow-inner border mb-16 pl-6 pr-8 py-1 hover:scale-105 transition-all'>
+          <button className='flex items-center gap-3 shadow-inner border mb-8 2xl:mb-16 pl-6 pr-8 py-1 hover:scale-105 transition-all'>
             <BiArrowBack className='text-2xl mt-0.5' />
             <span className='text-lg'>Back</span>
           </button>
         </Link>
-        <img src={country.flags.svg} alt="" className='rounded-lg object-cover' />
-        <div>
-          <h2 className="text-3xl font-bold tarcking-wide mt-14">{country.name}</h2>
-          <ul className="text-gray-700 mt-8 flex flex-col gap-3">
-            <li><strong>Native Name:</strong> {country.nativeName}</li>
-            <li><strong>Population:</strong> {country.population}</li>
-            <li><strong>Region:</strong> {country.region}</li>
-            <li><strong>Sub Region:</strong> {country.subregion}</li>
-            {country.capital && <li><strong>Capital:</strong> {country.capital}</li>}
-          </ul>
-          <ul className="text-gray-700 mt-14 flex flex-col gap-3">
-            <li><strong>Top Level Domain:</strong> {country.topLevelDomain}</li>
-            {country.currencies && <li><strong>Currencies:</strong> {country.currencies[0].name}</li>}
-            <li><strong>Languages:</strong> {country.languages[0].name}</li>
-          </ul>
-          {country.borders !== undefined && <div className='mt-10'>
-            <h2 className='text-xl font-semibold tracking-wide'>Borders Countries:</h2>
-            <ul className='flex flex-wrap gap-4 mt-6'>
-            {country.borders.map((b, idX) => {
-                return <li key={idX}>
-                <Link to={`/${data.find((country) => {
-                        return b === country.alpha3Code;
-                      }).numericCode}`}>
-                  <button className='shadow-inner border px-6 py-1 hover:scale-105 transition-all'>
-                    {
-                      data.find((country) => {
-                        return b === country.alpha3Code;
-                      }).name
-                    }
-                  </button>
-                </Link>
-              </li>
-              })}
-            </ul>
-          </div>}
+        <div className='lg:flex gap-24'>
+          <img src={country.flags.svg} alt="" className='rounded-lg object-cover lg:w-[50%] lg:h-96 2xl:h-[36rem]' />
+          <div>
+            <h2 className="text-3xl font-bold tarcking-wide mt-14 lg:mt-4 lg:mb-10 2xl:mt-8">{country.name}</h2>
+            <div className='lg:flex gap-24'>
+              <ul className="text-gray-700 mt-8 lg:mt-0 flex flex-col gap-3">
+                <li><strong>Native Name:</strong> {country.nativeName}</li>
+                <li><strong>Population:</strong> {country.population}</li>
+                <li><strong>Region:</strong> {country.region}</li>
+                <li><strong>Sub Region:</strong> {country.subregion}</li>
+                {country.capital && <li><strong>Capital:</strong> {country.capital}</li>}
+              </ul>
+              <ul className="text-gray-700 mt-14 lg:mt-0 flex flex-col gap-3">
+                <li><strong>Top Level Domain:</strong> {country.topLevelDomain}</li>
+                {country.currencies && <li><strong>Currencies:</strong> {country.currencies[0].name}</li>}
+                <li><strong>Languages:</strong> {country.languages[0].name}</li>
+              </ul>
+            </div>
+            {country.borders !== undefined && <div className='mt-10 text-sm'>
+              <span className='text-xl lg:text-lg font-semibold tracking-wide'>Borders Countries:</span>
+              <ul className='flex flex-wrap gap-4 mt-6'>
+              {country.borders.map((b, idX) => {
+                  return <li key={idX}>
+                  <Link to={`/${data.find((country) => {
+                          return b === country.alpha3Code;
+                        }).numericCode}`}>
+                    <button className='shadow-inner border px-6 py-1 hover:scale-105 transition-all'>
+                      {
+                        data.find((country) => {
+                          return b === country.alpha3Code;
+                        }).name
+                      }
+                    </button>
+                  </Link>
+                </li>
+                })}
+              </ul>
+            </div>}
+          </div>
         </div>
       </div>
     )

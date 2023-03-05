@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Input from './Input'
 import MainView from './MainView'
 import data from "../data/data.json"
+import Category from './Category'
 
 
 const Homepage = () => {
@@ -12,7 +13,10 @@ const Homepage = () => {
     <>
       <div className='w-full'>
         <main className='p-8 lg:p-12'>
-          <Input setCountries={setCountries} countries={countries} data={data} />
+          <div className='flex flex-col lg:flex-row lg:justify-between gap-14'>
+            <Input setCountries={setCountries} countries={countries} data={data} />
+            <Category countries={countries} setCountries={setCountries} />
+          </div>
           <MainView countries={countries}/>
         </main>
       </div>

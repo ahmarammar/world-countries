@@ -15,7 +15,7 @@ const Input = ({setCountries, data}) => {
   }
   return (
     <>
-    <div className='flex items-center gap-8 border py-4 px-8 drop-shadow-md rounded-md border-gray-100 bg-white max-w-lg'>
+    <div className='flex items-center gap-8 border py-4 px-8 drop-shadow-md rounded-md border-gray-100 bg-white max-w-lg lg:w-[40rem]'>
       <AiOutlineSearch className='text-3xl text-gray-400'/>
       <input type="text" className='w-full outline-none text-base font-medium placeholder:text-gray-400' placeholder='Search for a country...' onChange={handleInput} />
     </div>

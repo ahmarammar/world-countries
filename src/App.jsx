@@ -10,9 +10,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='/:countryID' element={<>
-          <CountryPage data={data} />
-        </>} />
+        <Route path='/:countryID' element={<CountryPage data={data} />} />
       </Routes>
     </>
   )

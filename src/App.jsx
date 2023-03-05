@@ -5,7 +5,6 @@ import Homepage from './components/Homepage'
 import data from "./data/data.json"
 
 const App = () => {
-  
   return (
     <>
       <Header />

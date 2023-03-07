@@ -15,7 +15,7 @@ const Category = ({ setCountries}) => {
   return (
     <>
       <div className='relative'>
-        <div className='flex items-center gap-8 border py-4 pl-8 pr-6 drop-shadow-md rounded-md border-gray-100 bg-white max-w-[14.9rem]'
+        <div className='flex items-center gap-8 border py-4 pl-8 pr-6 drop-shadow-md rounded-md border-gray-100 bg-white max-w-[14.9rem] lg:max-w-none'
         onClick={() => menuOpen === true ? setMenuOpen(false) : setMenuOpen(true)}
         >
           <p className='text-lg select-none'>Filter by Region</p>
